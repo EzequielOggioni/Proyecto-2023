@@ -1,0 +1,25 @@
+<div class="container-fluid" *ngIf="!ingresado">
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-2">
+            <p>Usuario:</p>
+        </div>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-2">
+            <input type="text" placeholder="Usuario" [(ngModel)]="usuario">
+        </div>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-2">
+            <p>Password</p>
+        </div>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-2">
+            <input type="password" placeholder="Password" [(ngModel)]="password">
+        </div>
+    </div>
+    <div class="row">
+        <div class="offset-2">
+            <input type="button" class="btn btn-info" value="Ingresar" (click)="ingresar()">
+        </div>
+    </div>
+</div>
+<router-outlet></router-outlet>
+<div *ngIf="ingresado">
+    Bienvenido
+</div>
