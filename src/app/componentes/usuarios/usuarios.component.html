@@ -3,8 +3,10 @@
     <div class="container">
         <div class="row">
             <div class="col-sm col-xs-12">
-                <div *ngFor="let usu of this.listaUsuarios ">
-                    <app-usuario [dadasad]="usu" (eliminar)="quitar(usu)"></app-usuario>
+                <div class="row">
+                    <div *ngFor="let usu of this.listaUsuarios "   class="col-4">
+                        <app-usuario [dadasad]="usu" (eliminar)="quitar(usu)"></app-usuario>
+                    </div>
                 </div>
             </div>
         </div>
