@@ -4,12 +4,14 @@ import { BienvenidoComponent } from './componentes/bienvenido/bienvenido.compone
 import { ErrorComponent } from './componentes/error/error.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { RegistrarComponent } from './componentes/registrar/registrar.component';
+import { UsuariosComponent } from './componentes/usuarios/usuarios.component';
 
 const routes: Routes = [
   {path:'bienvenido',component:BienvenidoComponent}, 
   {path:'login',component:LoginComponent, children:[{path:'hola',component:BienvenidoComponent} 
 ]} ,
   {path:'' ,component:LoginComponent}, 
+  {path:'usuarios', component: UsuariosComponent},
   {path:'registrar' ,component:RegistrarComponent}, 
   {path:'**',component:ErrorComponent} 
 

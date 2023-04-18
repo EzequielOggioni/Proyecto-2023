@@ -1,0 +1,11 @@
+<div class="col-4">
+  <div class="card">
+    <img class="card-img-top" [src]="this.usuario.imagen" alt="sin imagen">
+    <div class="card-body">
+      <h5 class="card-title">{{this.usuario.nombre}}</h5>
+      <p class="card-text">{{this.usuario.fechaNac}}</p>
+      <p class="card-text">{{this.usuario.dni}}</p>
+      <input type="button" class="btn btn-danger" value="Eliminar" (click)="informarEliminar()">
+    </div>
+  </div>
+</div>

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {  Router } from '@angular/router';
+import { Usuario } from 'src/app/entidades/usuario';
 
 @Component({
   selector: 'app-login',
@@ -7,15 +8,14 @@ import {  Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  public usuario = "";
-  public password = "";
+  public usuario:Usuario = new Usuario(); 
   public ingresado = false;
   public ingresar() {
-    let usuario: Array<any> = <Array<any>>JSON.parse(localStorage.getItem("usuario") ?? "");
-    let i = usuario.findIndex(x => x.nombre == this.usuario);
+    let usuario: Array<Usuario> = <Array<Usuario>>JSON.parse(localStorage.getItem("usuario") ?? "[]");
+    let i = usuario.findIndex(x => x.nombre == this.usuario.nombre);
     if (i < 0)
       return;
-    if (usuario[i].contraseña == this.password)
+    if (usuario[i].contrasena == this.usuario.contrasena)
       this.route.navigateByUrl("bienvenido") ; 
     
   }

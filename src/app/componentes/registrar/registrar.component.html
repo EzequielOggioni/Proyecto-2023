@@ -3,13 +3,13 @@
         <p>Usuario:</p>
     </div>
     <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-2">
-        <input type="text" placeholder="Usuario" [(ngModel)]="usuario" >
+        <input type="text" placeholder="Usuario" [(ngModel)]="this.usuario.nombre" >
     </div>
     <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-2">
         <p>Password</p>
     </div>
     <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-2">
-        <input type="password" placeholder="Password" [(ngModel)]="password">
+        <input type="password" placeholder="Password" [(ngModel)]="this.usuario.contrasena">
     </div>
     <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-2">
         <p>Reingrese Password</p>
@@ -17,10 +17,37 @@
     <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-2">
         <input type="password" placeholder="Password" [(ngModel)]="password2">
     </div>
+    <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-2">
+        <p>Fecha Nacimiento:</p>
+    </div>
+    <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-2">
+        <input type="date" placeholder="fecha" [(ngModel)]="this.usuario.fechaNac" >
+    </div>
+    <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-2">
+        <p>dni</p>
+    </div>
+    <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-2">
+        <input type="number" placeholder="dni" [(ngModel)]="this.usuario.dni">
+    </div>
+    <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-2">
+        <p>tipo usuario:</p>
+    </div>
+    <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-2">
+        <input type="number" placeholder="tipo Usuario" [(ngModel)]="this.usuario.tipoUsuario" >
+    </div>
+    <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-2">
+        <p>Foto</p>
+    </div>
+    <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-2">
+        <input type="text" placeholder="foto" [(ngModel)]="this.usuario.imagen">
+    </div>
+    <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-2">
+        <img  [src]="this.usuario.imagen" >
+    </div>
 </div>
-<div class="row" *ngIf="password==password2" >
+<div class="row" *ngIf="this.usuario.contrasena==password2" >
     <div class="offset-2">
-        <input type="button" [disabled]="this.usuario == '' || this.password ==''  " class="btn btn-danger" 
+        <input type="button" [disabled]="this.usuario.nombre == '' || this.usuario.contrasena == ''  " class="btn btn-danger" 
         value="Registrar" (click)="registrar()">
     </div>
 </div>

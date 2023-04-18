@@ -9,6 +9,8 @@ import { LoginComponent } from './componentes/login/login.component';
 import { BienvenidoComponent } from './componentes/bienvenido/bienvenido.component';
 import { MenuComponent } from './componentes/menu/menu.component';
 import { RegistrarComponent } from './componentes/registrar/registrar.component';
+import { UsuariosComponent } from './componentes/usuarios/usuarios.component';
+import { UsuarioComponent } from './componentes/usuario/usuario.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { RegistrarComponent } from './componentes/registrar/registrar.component'
     LoginComponent,
     BienvenidoComponent,
     MenuComponent,
-    RegistrarComponent
+    RegistrarComponent,
+    UsuariosComponent,
+    UsuarioComponent
   ],
   imports: [
     BrowserModule,
