@@ -11,6 +11,10 @@ import { MenuComponent } from './componentes/menu/menu.component';
 import { RegistrarComponent } from './componentes/registrar/registrar.component';
 import { UsuariosComponent } from './componentes/usuarios/usuarios.component';
 import { UsuarioComponent } from './componentes/usuario/usuario.component';
+import { ProductosComponent } from './componentes/productos/productos.component';
+import { ProductoComponent } from './componentes/producto/producto.component';
+import { PrendaPipe } from './pipes/prenda.pipe';
+import { FiltroProductoPipe } from './pipes/filtro-producto.pipe';
 
 @NgModule({
   declarations: [
@@ -21,7 +25,11 @@ import { UsuarioComponent } from './componentes/usuario/usuario.component';
     MenuComponent,
     RegistrarComponent,
     UsuariosComponent,
-    UsuarioComponent
+    UsuarioComponent,
+    ProductosComponent,
+    ProductoComponent,
+    PrendaPipe,
+    FiltroProductoPipe
   ],
   imports: [
     BrowserModule,

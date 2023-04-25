@@ -1,0 +1,14 @@
+
+        <div class="row">
+            <div class="col-sm col-xs-12">
+                <div class="row">
+                    <input type="text" [(ngModel)]="busqueda">
+                </div>
+                <div class="row">
+                    <div *ngFor="let prod of this.productos|filtroProducto :busqueda "   class="col-4">
+                        <app-producto  [miProducto]="prod"></app-producto>
+                    </div>
+                </div>                
+            </div>
+        </div>
+    

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {  Router } from '@angular/router';
 import { Usuario } from 'src/app/entidades/usuario';
+import { ProductosService } from 'src/app/servicios/productos.service';
 
 @Component({
   selector: 'app-login',
@@ -19,12 +20,14 @@ export class LoginComponent {
       this.route.navigateByUrl("bienvenido") ; 
     
   }
+quitar(){
+  this.otronombredevariable.quitarUno();
 
+}
   /**
    *
    */
-  constructor(public route: Router ) {
-    
+  constructor(public route: Router, public otronombredevariable:ProductosService ) {
   }
 
 }
