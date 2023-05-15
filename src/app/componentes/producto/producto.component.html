@@ -2,9 +2,9 @@
     <div class="card-body">
       <h5 class="card-title">{{this.miProducto.nombre|uppercase}}</h5>
       <p class="card-text">{{this.miProducto.precio|currency}}</p>
-      <p class="card-text">{{this.miProducto.tipoPrenda|prenda}}</p>
+      <p class="card-text">{{this.miProducto.tipoPrenda}}{{this.miProducto.tipoPrenda|prenda}}</p>
       <p class="card-text">{{this.miProducto.marca}}</p>
-      <p class="card-text">{{this.miProducto.stock}}</p>
+      <p [appResaltar]="this.miProducto.stock"       class="card-text">{{this.miProducto.stock}}</p>
       <input type="text" [(ngModel)] ="this.miProducto.stock" >
       <!-- <input type="button" class="btn btn-danger" value="Eliminar" (click)="informarEliminar()"> -->
     </div>

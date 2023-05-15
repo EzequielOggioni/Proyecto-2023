@@ -12,10 +12,10 @@ export class PrendaPipe implements PipeTransform {
           return "Buzo";
         break;
         case TipoPrenda.pantalon:
-          return "pantalon";
+          return "Pantalon";
         break;
         case TipoPrenda.remera:
-          return "remera";
+          return "Remera";
         break;
       default:
         return "error";

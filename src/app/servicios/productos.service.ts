@@ -15,7 +15,7 @@ export class ProductosService {
   }
 
   constructor() { 
-    
+                                                                                                                                
   this.productos = [];
   this.productos.push(<Producto>{marca:'Nique',nombre:'coleccion 2022',precio: 596,stock:30, tipoPrenda :TipoPrenda.remera  });
   this.productos.push(<Producto>{marca:'Adiddas',nombre:'lisa',precio: 1596,stock:15, tipoPrenda :TipoPrenda.remera  });

@@ -15,6 +15,7 @@ import { ProductosComponent } from './componentes/productos/productos.component'
 import { ProductoComponent } from './componentes/producto/producto.component';
 import { PrendaPipe } from './pipes/prenda.pipe';
 import { FiltroProductoPipe } from './pipes/filtro-producto.pipe';
+import { ResaltarDirective } from './resaltar.directive';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { FiltroProductoPipe } from './pipes/filtro-producto.pipe';
     ProductosComponent,
     ProductoComponent,
     PrendaPipe,
-    FiltroProductoPipe
+    FiltroProductoPipe,
+    ResaltarDirective
   ],
   imports: [
     BrowserModule,
