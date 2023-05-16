@@ -7,6 +7,7 @@ import { Producto, TipoPrenda } from '../clases/producto';
 export class ProductosService {
  private productos:Producto[];
 
+ 
   getProducto():Producto[]{
     return this.productos;
   }
@@ -24,5 +25,9 @@ export class ProductosService {
   this.productos.push(<Producto>{marca:'Nique',nombre:'estampas',precio: 1206,stock:9, tipoPrenda :TipoPrenda.pantalon  });
   this.productos.push(<Producto>{marca:'Puma',nombre:'Messi',precio: 2096,stock:13, tipoPrenda :TipoPrenda.buzo  });
 
+  }
+
+  tiene(){
+    
   }
 }
