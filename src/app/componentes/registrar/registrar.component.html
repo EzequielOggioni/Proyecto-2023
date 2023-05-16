@@ -3,7 +3,7 @@
         <p>Usuario:</p>
     </div>
     <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-2">
-        <input type="text" placeholder="Usuario" [(ngModel)]="this.usuario.nombre" >
+        <input type="text" placeholder="Usuario" [(ngModel)]="this.usuario.nombre">
     </div>
     <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-2">
         <p>Password</p>
@@ -21,7 +21,7 @@
         <p>Fecha Nacimiento:</p>
     </div>
     <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-2">
-        <input type="date" placeholder="fecha" [(ngModel)]="this.usuario.fechaNac" >
+        <input type="date" placeholder="fecha" [(ngModel)]="this.usuario.fechaNac">
     </div>
     <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-2">
         <p>dni</p>
@@ -33,7 +33,7 @@
         <p>tipo usuario:</p>
     </div>
     <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-2">
-        <input type="number" placeholder="tipo Usuario" [(ngModel)]="this.usuario.tipoUsuario" >
+        <input type="number" placeholder="tipo Usuario" [(ngModel)]="this.usuario.tipoUsuario">
     </div>
     <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-2">
         <p>Foto</p>
@@ -42,12 +42,71 @@
         <input type="text" placeholder="foto" [(ngModel)]="this.usuario.imagen">
     </div>
     <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-2">
-        <img  [src]="this.usuario.imagen" >
+        <img [src]="this.usuario.imagen">
     </div>
 </div>
-<div class="row" *ngIf="this.usuario.contrasena==password2" >
+<div class="row" *ngIf="this.usuario.contrasena==password2">
     <div class="offset-2">
-        <input type="button" [disabled]="this.usuario.nombre == '' || this.usuario.contrasena == ''  " class="btn btn-danger" 
-        value="Registrar" (click)="registrar()">
+        <input type="button" [disabled]="this.usuario.nombre == '' || this.usuario.contrasena == ''  "
+            class="btn btn-danger" value="Registrar" (click)="registrar()">
+    </div>
+</div>
+
+<form class="row" [formGroup]="this.miFormulario" (ngSubmit)="aceptar()">
+    <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-2">
+        <p>Usuario:</p>
+    </div>
+    <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-2">
+        <input type="text" placeholder="Usuario" formControlName="nombre">
+        <small *ngIf="this.miFormulario.get('nombre')?.errors && this.miFormulario.get('nombre')?.touched" >el campo es requrido</small>
+    </div>
+    <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-2">
+<p>Password</p>
+    </div>
+    <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-2">
+    <input type="password" placeholder="Password" formControlName="contrasena">
+    </div>
+    <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-2">
+        <p>Reingrese Password</p>
+    </div>
+    <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-2">
+        <input type="password" placeholder="Password" formControlName="password2">
+    </div>
+    <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-2">
+        <p>Fecha Nacimiento:</p>
+    </div>
+    <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-2">
+        <input type="date" placeholder="fecha" formControlName="fechaNac">
+    </div>
+    <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-2">
+        <p>dni</p>
+    </div>
+    <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-2">
+        <input type="number" placeholder="dni" formControlName="dni" appValidadorPassword>
+    </div>
+    <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-2">
+        <p>tipo usuario:</p>
+    </div>
+    <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-2">
+        <input type="number" placeholder="tipo Usuario" formControlName="tipoUsuario">
+    </div>
+    <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-2">
+        <p>Foto</p>
+    </div>
+    <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-2">
+        <input type="text" placeholder="foto" formControlName="imagen" required>
+    </div>
+    <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-2">
+        <img [src]="this.usuario.imagen">
+    </div>
+    {{this.miFormulario.status}}
+    <button [disabled]="!this.miFormulario.valid">aceptar</button>
+</form>
+
+
+<div class="row" *ngIf="this.usuario.contrasena==password2">
+    <div class="offset-2">
+        <input type="button" [disabled]="this.usuario.nombre == '' || this.usuario.contrasena == ''  "
+            class="btn btn-danger" value="Registrar" (click)="registrar()">
     </div>
 </div>

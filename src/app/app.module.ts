@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -16,6 +16,7 @@ import { ProductoComponent } from './componentes/producto/producto.component';
 import { PrendaPipe } from './pipes/prenda.pipe';
 import { FiltroProductoPipe } from './pipes/filtro-producto.pipe';
 import { ResaltarDirective } from './resaltar.directive';
+import { ValidadorPasswordDirective } from './validador-password.directive';
 
 @NgModule({
   declarations: [
@@ -31,12 +32,14 @@ import { ResaltarDirective } from './resaltar.directive';
     ProductoComponent,
     PrendaPipe,
     FiltroProductoPipe,
-    ResaltarDirective
+    ResaltarDirective,
+    ValidadorPasswordDirective
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
