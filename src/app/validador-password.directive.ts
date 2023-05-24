@@ -12,8 +12,5 @@ export class ValidadorPasswordDirective implements Validator{
   validate(control: AbstractControl<any, any>): ValidationErrors | null {
     return control.value < 5000000 ?  {"documento menor a 5": true } : null ;
   }
-  registerOnValidatorChange?(fn: () => void): void {
-    throw new Error('Method not implemented.');
-  }
 
 }
