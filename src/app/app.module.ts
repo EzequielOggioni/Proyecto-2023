@@ -19,6 +19,7 @@ import { FiltroProductoPipe } from './pipes/filtro-producto.pipe';
 import { ResaltarDirective } from './resaltar.directive';
 import { ValidadorPasswordDirective } from './validador-password.directive';
 import { DireccionComponent } from './componentes/direccion/direccion.component';
+import { HashLocationStrategy, LocationStrategy, PathLocationStrategy,  } from '@angular/common';
 
 @NgModule({
   declarations: [

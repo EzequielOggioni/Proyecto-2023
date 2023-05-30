@@ -9,7 +9,7 @@
         <p>Password</p>
     </div>
     <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-2">
-        <input type="password" placeholder="Password" [(ngModel)]="this.usuario.contrasena">
+        <input type="password" placeholder="Password" [(ngModel)]="this.usuario.password">
     </div>
     <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-2">
         <p>Reingrese Password</p>
@@ -46,9 +46,9 @@
         <img [src]="this.usuario.imagen">
     </div>
 </div>
-<div class="row" *ngIf="this.usuario.contrasena==password2">
+<div class="row" *ngIf="this.usuario.password==password2">
     <div class="offset-2">
-        <input type="button" [disabled]="this.usuario.nombre == '' || this.usuario.contrasena == ''  "
+        <input type="button" [disabled]="this.usuario.nombre == '' || this.usuario.password == ''  "
             class="btn btn-danger" value="Registrar" (click)="registrar()">
     </div>
 </div>
@@ -105,9 +105,9 @@
 </form>
 
 
-<div class="row" *ngIf="this.usuario.contrasena==password2">
+<div class="row" *ngIf="this.usuario.password==password2">
     <div class="offset-2">
-        <input type="button" [disabled]="this.usuario.nombre == '' || this.usuario.contrasena == ''  "
+        <input type="button" [disabled]="this.usuario.nombre == '' || this.usuario.password == ''  "
             class="btn btn-danger" value="Registrar" (click)="registrar()">
     </div>
 </div>
