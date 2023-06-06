@@ -20,6 +20,10 @@ import { ResaltarDirective } from './resaltar.directive';
 import { ValidadorPasswordDirective } from './validador-password.directive';
 import { DireccionComponent } from './componentes/direccion/direccion.component';
 import { HashLocationStrategy, LocationStrategy, PathLocationStrategy,  } from '@angular/common';
+import { JwtModule } from '@auth0/angular-jwt';
+export function tokenGetter() {
+  return JSON.parse(localStorage.getItem("UsuarioLogueado")??"").token;
+}
 
 @NgModule({
   declarations: [
@@ -44,7 +48,13 @@ import { HashLocationStrategy, LocationStrategy, PathLocationStrategy,  } from '
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule 
+    HttpClientModule ,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+        allowedDomains: ["localhost:7200"],
+        disallowedRoutes: [],
+      }})
   ],
   providers: [ ],
   bootstrap: [AppComponent]

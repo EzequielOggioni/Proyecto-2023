@@ -26,11 +26,11 @@ export class LoginComponent {
 
     this.http.post<Usuario[]>("http://localhost:7200/login",this.usuario)
     .subscribe(data=>{
-      if(data.length ==1){
-        localStorage.setItem('UsuarioLogeuado',JSON.stringify(data[0]));
+      
+        localStorage.setItem('UsuarioLogueado',JSON.stringify(data));
         this.token.salida =true;
         this.route.navigateByUrl("bienvenido") ;
-      }
+      
     } );
   }
 quitar(){
